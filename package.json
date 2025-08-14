@@ -1,0 +1,26 @@
+{
+  "name": "pwa_showcase",
+  "version": "1.0.0",
+  "description": "Desarrollo de una Aplicación Completa con Funcionalidades PWA",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server -c-1 .",
+    "dev": "live-server"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alexmig24/PWA_Showcase.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Alexmig24/PWA_Showcase/issues"
+  },
+  "homepage": "https://github.com/Alexmig24/PWA_Showcase#readme"
+}
