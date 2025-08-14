@@ -1,0 +1,82 @@
+[
+  {
+    "title": "MacBook Pro M3",
+    "description": "Laptop profesional con chip M3, perfecta para desarrollo y diseño. Incluye pantalla Retina de 14 pulgadas y 16GB de RAM.",
+    "price": "$1,999.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop",
+    "buttonTheme": "green"
+  },
+  {
+    "title": "iPhone 15 Pro",
+    "description": "El smartphone más avanzado con cámara profesional y chip A17 Pro. Disponible en múltiples colores.",
+    "price": "$1,199.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400&h=300&fit=crop",
+    "buttonTheme": "yellow"
+  },
+  {
+    "title": "AirPods Pro (2ª gen)",
+    "description": "Auriculares inalámbricos con cancelación de ruido activa y sonido espacial personalizado. Hasta 6 horas de reproducción.",
+    "price": "$249.99",
+    "status": "Sin stock",
+    "imageUrl": "https://images.unsplash.com/photo-1588423771073-b8903fbb85b5?w=400&h=300&fit=crop",
+    "buttonTheme": "green"
+  },
+  {
+    "title": "iPad Air (5ª gen)",
+    "description": "Tablet versátil con chip M1 y pantalla Liquid Retina de 10.9 pulgadas. Ideal para creativos y profesionales.",
+    "price": "$599.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=300&fit=crop",
+    "buttonTheme": "green"
+  },
+  {
+    "title": "Apple Watch Series 9",
+    "description": "Reloj inteligente con monitoreo avanzado de salud, GPS integrado y resistencia al agua hasta 50 metros.",
+    "price": "$399.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=400&h=300&fit=crop",
+    "buttonTheme": "yellow"
+  },
+  {
+    "title": "Magic Keyboard",
+    "description": "Teclado inalámbrico con teclas tipo tijera y Touch ID integrado. Batería recargable de larga duración.",
+    "price": "$129.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400&h=300&fit=crop",
+    "buttonTheme": "green"
+  },
+  {
+    "title": "Magic Mouse",
+    "description": "Mouse inalámbrico con Multi-Touch y desplazamiento fluido en 360°. Diseño elegante y ergonómico.",
+    "price": "$79.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=300&fit=crop",
+    "buttonTheme": "yellow"
+  },
+  {
+    "title": "Studio Display",
+    "description": "Monitor 5K de 27 pulgadas con cámara Ultra Wide de 12 MP y audio espacial. Perfecto para profesionales.",
+    "price": "$1,599.99",
+    "status": "Sin stock",
+    "imageUrl": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=400&h=300&fit=crop",
+    "buttonTheme": "green"
+  },
+  {
+    "title": "HomePod mini",
+    "description": "Altavoz inteligente compacto con audio de 360° y Siri integrado. Compatible con HomeKit.",
+    "price": "$99.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1589492477829-5e65395b66cc?w=400&h=300&fit=crop",
+    "buttonTheme": "yellow"
+  },
+  {
+    "title": "Apple TV 4K",
+    "description": "Reproductor multimedia con chip A15 Bionic, soporte para Dolby Vision y Dolby Atmos. Incluye control remoto Siri.",
+    "price": "$179.99",
+    "status": "Disponible",
+    "imageUrl": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=400&h=300&fit=crop",
+    "buttonTheme": "green"
+  }
+]

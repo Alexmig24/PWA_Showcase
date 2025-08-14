@@ -1,8 +1,8 @@
 :root {
-  --primary: #009688; /* Teal */
+  --primary: #009688;
   --dark-primary: #00796B;
   --light-primary: #B2DFDB;
-  --accent: #FFC107; /* Amber */
+  --accent: #FFC107;
   --white: #FFFFFF;
   --light-gray: #F5F5F5;
   --dark-gray: #212121;
@@ -11,119 +11,267 @@
 body {
   background-color: var(--light-gray);
   min-height: 100vh;
+  margin: 0;
 }
 
 .page-content {
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-/* Modal para agregar notas */
-.add-note-modal {
+/* Modal para agregar producto */
+.add-product-modal {
   display: none;
   position: fixed;
-  top: 0;
+  top: 0; 
   left: 0;
-  width: 100%;
+  width: 100%; 
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1000;
-  justify-content: center;
+  background: rgba(0,0,0,0.5);
   align-items: center;
+  justify-content: center;
+  z-index: 999;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
 }
 
-.add-note-content {
+.add-product-modal.show {
+  display: flex;
+}
+
+.add-product-content {
   width: 90%;
-  max-width: 600px;
-  margin: 20px;
+  max-width: 500px;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px) scale(0.9);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Botón flotante */
-.add-note-fab {
+.add-product-fab {
   position: fixed !important;
-  right: 30px;
-  bottom: 30px;
-  z-index: 900;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
+  transition: all 0.2s ease !important;
 }
 
-/* Lista de notas */
-.notes-grid {
-  justify-content: flex-start;
+.add-product-fab:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4) !important;
+}
+
+/* Grid de productos */
+.products-grid {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.note-card {
-  min-width: 300px;
-  max-width: 400px;
-  word-break: break-word;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.note-card .mdl-card__title {
-  color: var(--white);
-  background-color: var(--primary);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.note-title {
-  margin: 0;
-  flex-grow: 1;
-}
-
-.note-card .mdl-card__supporting-text {
-  flex-grow: 1;
-  padding: 16px;
-  color: var(--dark-gray);
-}
-
-.note-card .mdl-card__actions {
-  display: flex;
-  justify-content: flex-end;
-  padding: 8px;
-}
-
-.note-date {
-  font-size: 0.8rem;
-  color: #757575;
-  margin-top: 8px;
-}
-
-/* Mensaje cuando no hay notas */
-.empty-notes-message {
+/* Mensaje vacío */
+.empty-products-message {
   text-align: center;
-  padding: 40px;
-  color: var(--dark-gray);
+  color: #777;
+  padding: 60px 20px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 16px;
+  margin: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.empty-products-message i {
+  margin-bottom: 20px;
+  color: #2e7d5f;
+  opacity: 0.7;
+}
+
+/* Componente de tarjeta de producto */
+.product-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60vh;
+  color: white;
+  font-size: 48px;
 }
 
-.empty-notes-message i {
-  font-size: 60px;
-  color: var(--light-primary);
-  margin-bottom: 20px;
+.product-content {
+  padding: 16px;
 }
 
-.empty-notes-message p {
-  font-size: 18px;
-  max-width: 400px;
+.product-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.product-description {
+  color: #666;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2e7d5f;
+  margin: 0 0 12px 0;
+}
+
+.product-status {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.product-status.disponible {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.product-status.sin-stock {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.product-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.product-button.green {
+  background: #2e7d5f;
+  color: white;
+}
+
+.product-button.green:hover:not(:disabled) {
+  background: #1e5d42;
+}
+
+.product-button.yellow {
+  background: #ffc107;
+  color: #333;
+}
+
+.product-button.yellow:hover:not(:disabled) {
+  background: #ffb300;
+}
+
+.product-button:disabled {
+  background: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* Campos del formulario */
+.mdl-textfield {
+  width: 100% !important;
+  margin-bottom: 16px !important;
+}
+
+.mdl-textfield__input {
+  width: 100% !important;
+}
+
+/* Header mejorado */
+.mdl-layout__header {
+  background: linear-gradient(135deg, #2e7d5f 0%, #1e5d42 100%) !important;
+}
+
+.mdl-layout-title {
+  font-weight: 600 !important;
+  font-size: 1.3rem !important;
 }
 
 /* Responsive */
-@media (max-width: 600px) {
-  .notes-grid {
-    justify-content: center;
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 20px;
   }
   
-  .add-note-content {
-    width: 95%;
-    margin: 10px;
+  .add-product-fab {
+    bottom: 16px !important;
+    right: 16px !important;
+  }
+}
+
+/* Toast notifications */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 20px;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  z-index: 1000;
+  animation: slideUpToast 0.3s ease-out;
+}
+
+.toast.success {
+  background: #2e7d5f;
+}
+
+.toast.error {
+  background: #d32f2f;
+}
+
+@keyframes slideUpToast {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
