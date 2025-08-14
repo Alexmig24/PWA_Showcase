@@ -1,5 +1,5 @@
 const CACHE_NAME = 'quick-jot-v1';
-const BASE_PATH = location.hostname === 'localhost' ? '' : '/PWA_Material-Design';
+const BASE_PATH = location.hostname === 'localhost' ? '' : '/PWA_Showcase';
 
 // Archivos esenciales para cachear (App Shell)
 const CACHE_FILES = [
@@ -8,8 +8,8 @@ const CACHE_FILES = [
   `${BASE_PATH}/manifest.webmanifest.json`,
   `${BASE_PATH}/src/css/app.css`,
   `${BASE_PATH}/src/js/app.js`,
-  `${BASE_PATH}/src/js/notes.js`,
-  `${BASE_PATH}/src/js/ui.js`,
+  `${BASE_PATH}/src/data/products.json`,
+  `${BASE_PATH}/src/components/espe-product-card.js`,
   `${BASE_PATH}/sw.js`,
   // Material Design Lite CDN
   'https://fonts.googleapis.com/icon?family=Material+Icons',
